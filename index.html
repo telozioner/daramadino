@@ -1,0 +1,1878 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>درآمدینو</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    -webkit-tap-highlight-color:transparent;
+}
+
+:root{
+    --black:#050505;
+    --card:#111111;
+    --card2:#151515;
+    --border:#292929;
+    --white:#ffffff;
+    --gray:#999999;
+    --gray2:#666666;
+}
+
+html,body{
+    background:#050505;
+}
+
+body{
+    min-height:100vh;
+    color:#fff;
+    font-family:'Vazirmatn',Tahoma,Arial,sans-serif;
+    padding-bottom:90px;
+}
+
+button{
+    font-family:inherit;
+    cursor:pointer;
+}
+
+.app{
+    width:100%;
+    max-width:650px;
+    margin:auto;
+}
+
+/* =========================
+HEADER
+========================= */
+
+.header{
+    padding:20px 17px 10px;
+}
+
+.header-line{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo-title{
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.logo{
+    width:48px;
+    height:48px;
+    border-radius:13px;
+    overflow:hidden;
+    background:#111;
+    border:1px solid #292929;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+}
+
+.logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    display:block;
+}
+
+.header h1{
+    font-size:19px;
+    font-weight:800;
+}
+
+.header p{
+    color:#777;
+    font-size:10px;
+    margin-top:3px;
+}
+
+.header-button{
+    width:40px;
+    height:40px;
+    border:1px solid #292929;
+    background:#0d0d0d;
+    color:#fff;
+    border-radius:11px;
+}
+
+/* =========================
+PAGES
+========================= */
+
+.page{
+    display:none;
+    padding:4px 16px;
+    animation:show .18s ease;
+}
+
+.page.active{
+    display:block;
+}
+
+@keyframes show{
+    from{
+        opacity:0;
+        transform:translateY(5px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =========================
+TITLE
+========================= */
+
+.page-title{
+    margin:20px 2px 16px;
+}
+
+.page-title h2{
+    font-size:23px;
+    font-weight:800;
+}
+
+.page-title p{
+    color:#777;
+    font-size:11px;
+    margin-top:5px;
+}
+
+/* =========================
+CARDS
+========================= */
+
+.card{
+    background:#111;
+    border:1px solid #292929;
+    border-radius:17px;
+    margin-bottom:13px;
+}
+
+/* =========================
+HOME
+========================= */
+
+.home-intro{
+    padding:21px;
+}
+
+.home-intro h3{
+    font-size:19px;
+    margin-bottom:10px;
+}
+
+.home-intro p{
+    color:#999;
+    font-size:12px;
+    line-height:2.2;
+}
+
+.home-info{
+    display:flex;
+    gap:10px;
+    padding:16px;
+}
+
+.info-icon{
+    width:40px;
+    height:40px;
+    min-width:40px;
+    background:#fff;
+    color:#000;
+    border-radius:11px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.info-content{
+    flex:1;
+}
+
+.info-content h4{
+    font-size:13px;
+    margin-bottom:4px;
+}
+
+.info-content p{
+    color:#888;
+    font-size:10px;
+    line-height:1.9;
+}
+
+.rubika-box{
+    padding:18px;
+}
+
+.rubika-box h3{
+    font-size:15px;
+    margin-bottom:8px;
+}
+
+.rubika-box p{
+    color:#888;
+    font-size:11px;
+    line-height:2;
+}
+
+.divider{
+    height:1px;
+    background:#242424;
+    margin:16px 0;
+}
+
+.list-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:12px;
+}
+
+.list-number{
+    width:27px;
+    height:27px;
+    border-radius:8px;
+    background:#fff;
+    color:#000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    font-weight:800;
+}
+
+/* =========================
+MISSION
+========================= */
+
+.mission-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.mission-item{
+    width:100%;
+    display:flex;
+    align-items:center;
+    padding:14px;
+    background:#111;
+    border:1px solid #292929;
+    border-radius:16px;
+    color:#fff;
+    text-align:right;
+    transition:.15s;
+}
+
+.mission-item:active{
+    transform:scale(.985);
+    background:#181818;
+}
+
+.mission-logo{
+    width:60px;
+    height:60px;
+    min-width:60px;
+    object-fit:cover;
+    border-radius:13px;
+    margin-left:13px;
+    order:2;
+    background:#fff;
+}
+
+.mission-info{
+    flex:1;
+    order:1;
+}
+
+.mission-info h3{
+    font-size:16px;
+    font-weight:800;
+    margin-bottom:5px;
+}
+
+.mission-info p{
+    color:#777;
+    font-size:10px;
+    line-height:1.8;
+}
+
+.arrow{
+    order:0;
+    color:#777;
+    font-size:20px;
+    margin-right:7px;
+}
+
+/* =========================
+MORE
+========================= */
+
+.more-box{
+    margin-top:18px;
+    margin-bottom:20px;
+    padding:18px;
+    text-align:center;
+    border:1px dashed #333;
+    border-radius:15px;
+    color:#777;
+    background:#0d0d0d;
+}
+
+.more-box strong{
+    display:block;
+    color:#aaa;
+    font-size:13px;
+    margin-bottom:5px;
+}
+
+.more-box span{
+    font-size:10px;
+}
+
+/* =========================
+DETAIL
+========================= */
+
+.back-button{
+    border:0;
+    background:none;
+    color:#aaa;
+    font-size:12px;
+    margin-bottom:18px;
+}
+
+.detail-card{
+    overflow:hidden;
+}
+
+.detail-image{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    display:block;
+}
+
+.detail-content{
+    padding:19px;
+}
+
+.detail-content h2{
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.detail-content p{
+    color:#999;
+    font-size:12px;
+    line-height:2.2;
+}
+
+.invite{
+    margin-top:15px;
+    padding:14px;
+    background:#181818;
+    border:1px solid #292929;
+    border-radius:12px;
+    color:#999;
+    font-size:11px;
+    line-height:2;
+}
+
+.invite-code{
+    display:block;
+    color:#fff;
+    font-size:15px;
+    font-weight:800;
+    direction:ltr;
+    text-align:center;
+    margin-top:5px;
+    word-break:break-all;
+}
+
+.black-button{
+    width:100%;
+    border:1px solid #fff;
+    background:#fff;
+    color:#000;
+    border-radius:12px;
+    padding:14px;
+    font-size:12px;
+    font-weight:800;
+    margin-top:16px;
+}
+
+.outline-button{
+    width:100%;
+    border:1px solid #333;
+    background:#111;
+    color:#fff;
+    border-radius:12px;
+    padding:14px;
+    font-size:12px;
+    font-weight:700;
+    margin-top:9px;
+}
+
+/* =========================
+SHOP
+========================= */
+
+.package-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.package-item{
+    width:100%;
+    display:flex;
+    align-items:center;
+    padding:15px;
+    background:#111;
+    border:1px solid #292929;
+    border-radius:16px;
+    color:#fff;
+    text-align:right;
+}
+
+.package-icon{
+    width:55px;
+    height:55px;
+    min-width:55px;
+    background:#fff;
+    color:#000;
+    border-radius:13px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:17px;
+    font-weight:800;
+    margin-left:13px;
+}
+
+.package-info{
+    flex:1;
+}
+
+.package-info h3{
+    font-size:15px;
+    margin-bottom:4px;
+}
+
+.package-info p{
+    color:#777;
+    font-size:9px;
+}
+
+.package-arrow{
+    color:#666;
+    font-size:18px;
+}
+
+.shop-detail{
+    padding:19px;
+}
+
+.shop-detail h2{
+    font-size:21px;
+    margin-bottom:15px;
+}
+
+.requirement{
+    background:#181818;
+    border:1px solid #292929;
+    border-radius:13px;
+    padding:15px;
+}
+
+.requirement-title{
+    color:#777;
+    font-size:11px;
+    margin-bottom:6px;
+}
+
+.requirement-name{
+    font-size:15px;
+    font-weight:800;
+}
+
+.requirement p{
+    color:#888;
+    font-size:10px;
+    line-height:2;
+    margin-top:7px;
+}
+
+.steps-title{
+    font-size:13px;
+    margin-top:18px;
+    margin-bottom:8px;
+}
+
+.shop-step{
+    display:flex;
+    gap:10px;
+    padding:10px 0;
+    border-bottom:1px solid #222;
+}
+
+.shop-step:last-child{
+    border-bottom:0;
+}
+
+.shop-number{
+    width:27px;
+    height:27px;
+    min-width:27px;
+    background:#fff;
+    color:#000;
+    border-radius:8px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:10px;
+    font-weight:800;
+}
+
+.shop-step p{
+    color:#999;
+    font-size:10px;
+    line-height:1.9;
+}
+
+/* =========================
+SUPPORT
+========================= */
+
+.support-card{
+    padding:20px;
+}
+
+.support-icon{
+    width:62px;
+    height:62px;
+    border:1px solid #333;
+    border-radius:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:26px;
+    margin-bottom:16px;
+}
+
+.support-card h3{
+    font-size:18px;
+}
+
+.support-card > p{
+    color:#888;
+    font-size:11px;
+    line-height:2;
+    margin-top:7px;
+}
+
+.what-send{
+    margin-top:18px;
+}
+
+.what-send h4{
+    font-size:13px;
+    margin-bottom:9px;
+}
+
+.send-item{
+    display:flex;
+    gap:9px;
+    padding:10px 0;
+    color:#999;
+    font-size:10px;
+    line-height:1.8;
+    border-bottom:1px solid #222;
+}
+
+/* =========================
+BOTTOM NAV
+========================= */
+
+.bottom-nav{
+    position:fixed;
+    z-index:100;
+    left:50%;
+    bottom:10px;
+    transform:translateX(-50%);
+    width:calc(100% - 20px);
+    max-width:620px;
+    height:68px;
+    background:#0b0b0b;
+    border:1px solid #292929;
+    border-radius:19px;
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    padding:5px;
+}
+
+.nav-button{
+    width:25%;
+    height:56px;
+    border:0;
+    background:none;
+    color:#666;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:4px;
+    border-radius:13px;
+}
+
+.nav-button.active{
+    background:#fff;
+    color:#000;
+}
+
+.nav-icon{
+    font-size:20px;
+    line-height:20px;
+}
+
+.nav-text{
+    font-size:8px;
+    font-weight:700;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:380px){
+
+    .page-title h2{
+        font-size:21px;
+    }
+
+    .mission-logo{
+        width:54px;
+        height:54px;
+        min-width:54px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- =========================
+HEADER
+========================= -->
+
+<header class="header">
+
+    <div class="header-line">
+
+        <div class="logo-title">
+
+            <div class="logo">
+
+                <img
+                    src="https://cdn.imgurl.ir/uploads/s673289_ea8cf191-2ac6-42b9-bba7-c52060fa27c4.png"
+                    alt="درآمدینو"
+                >
+
+            </div>
+
+            <div>
+
+                <h1>درآمدینو</h1>
+
+                <p>
+                    انجام مأموریت، دریافت جایزه
+                </p>
+
+            </div>
+
+        </div>
+
+        <button class="header-button">
+            •••
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+HOME
+===================================================== -->
+
+<section id="homePage" class="page active">
+
+    <div class="page-title">
+
+        <h2>خانه</h2>
+
+        <p>
+            اطلاعات برنامه و نحوه فعالیت
+        </p>
+
+    </div>
+
+
+    <div class="card home-intro">
+
+        <h3>
+            درآمدینو چیست؟
+        </h3>
+
+        <p>
+            درآمدینو یک برنامه برای انجام مأموریت‌های
+            مختلف و دریافت پاداش است.
+            مأموریت‌های موجود را انجام دهید و پس از
+            ارسال مدرک و تأیید پشتیبانی، جایزه خود را
+            دریافت کنید.
+        </p>
+
+    </div>
+
+
+    <div class="card home-info">
+
+        <div class="info-icon">
+            ⓘ
+        </div>
+
+        <div class="info-content">
+
+            <h4>
+                نحوه کار برنامه
+            </h4>
+
+            <p>
+                مأموریت موردنظر را انتخاب کنید،
+                توضیحات را بخوانید، مأموریت را انجام دهید
+                و عکس یا فیلم انجام مأموریت را برای
+                پشتیبانی ارسال کنید.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="card rubika-box">
+
+        <h3>
+            کانال روبیکا
+        </h3>
+
+        <p>
+            برای اطلاع از مأموریت‌های جدید،
+            بسته‌های جدید، اخبار و اطلاعیه‌های
+            درآمدینو، کانال روبیکا را دنبال کنید.
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="list-row">
+            <div class="list-number">۱</div>
+            <span>مشاهده مأموریت‌های جدید</span>
+        </div>
+
+        <div class="list-row">
+            <div class="list-number">۲</div>
+            <span>اطلاع از بسته‌های جدید</span>
+        </div>
+
+        <div class="list-row">
+            <div class="list-number">۳</div>
+            <span>دریافت اطلاعیه‌های برنامه</span>
+        </div>
+
+    </div>
+
+
+    <div class="card home-info">
+
+        <div class="info-icon">
+            ?
+        </div>
+
+        <div class="info-content">
+
+            <h4>
+                قوانین کلی
+            </h4>
+
+            <p>
+                قبل از انجام هر مأموریت شرایط آن را
+                به‌طور کامل مطالعه کنید. دریافت جایزه
+                پس از بررسی مدرک توسط پشتیبانی انجام
+                می‌شود.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+MISSION LIST
+===================================================== -->
+
+<section id="missionPage" class="page">
+
+    <div class="page-title">
+
+        <h2>
+            مأموریت‌ها
+        </h2>
+
+        <p>
+            مأموریت موردنظر خود را انتخاب کنید
+        </p>
+
+    </div>
+
+
+    <div class="mission-list">
+
+
+        <!-- صراف -->
+
+        <button
+            class="mission-item"
+            onclick="openMission('saraf')">
+
+            <img
+                class="mission-logo"
+                src="https://cdn.imgurl.ir/uploads/u61760_Screenshot___Google.jpg"
+                alt="صراف"
+            >
+
+            <div class="mission-info">
+
+                <h3>
+                    ثبت‌نام در صراف
+                </h3>
+
+                <p>
+                    ثبت‌نام در صراف و دریافت
+                    ۵۰ هزار تومان هدیه اولیه
+                </p>
+
+            </div>
+
+            <div class="arrow">
+                ‹
+            </div>
+
+        </button>
+
+
+        <!-- میلی -->
+
+        <button
+            class="mission-item"
+            onclick="openMission('milli')">
+
+            <img
+                class="mission-logo"
+                src="https://cdn.imgurl.ir/uploads/w949426_Screenshot___Google.jpg"
+                alt="میلی"
+            >
+
+            <div class="mission-info">
+
+                <h3>
+                    ثبت‌نام در میلی
+                </h3>
+
+                <p>
+                    ثبت‌نام با کد دعوت و دریافت
+                    ۱ میلی هدیه
+                </p>
+
+            </div>
+
+            <div class="arrow">
+                ‹
+            </div>
+
+        </button>
+
+
+        <!-- بلوجونیور -->
+
+        <button
+            class="mission-item"
+            onclick="openMission('blue')">
+
+            <img
+                class="mission-logo"
+                src="https://cdn.imgurl.ir/uploads/o09450_Screenshot___Google.jpg"
+                alt="بلوجونیور"
+            >
+
+            <div class="mission-info">
+
+                <h3>
+                    ثبت‌نام در بلوجونیور
+                </h3>
+
+                <p>
+                    افتتاح حساب و وارد کردن
+                    کد معرف QLWUWI
+                </p>
+
+            </div>
+
+            <div class="arrow">
+                ‹
+            </div>
+
+        </button>
+
+    </div>
+
+
+    <div class="more-box">
+
+        <strong>
+            چیزهای بیشتر به‌زودی
+        </strong>
+
+        <span>
+            مأموریت‌های جدید در آینده اضافه خواهند شد.
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+MISSION DETAIL
+===================================================== -->
+
+<section id="missionDetailPage" class="page">
+
+    <button
+        class="back-button"
+        onclick="showPage('missionPage')">
+
+        ← بازگشت به مأموریت‌ها
+
+    </button>
+
+
+    <div class="card detail-card">
+
+        <img
+            id="detailImage"
+            class="detail-image"
+            src=""
+            alt="مأموریت"
+        >
+
+
+        <div class="detail-content">
+
+            <h2 id="detailTitle">
+                مأموریت
+            </h2>
+
+
+            <p id="detailDescription">
+            </p>
+
+
+            <div class="invite">
+
+                <span id="inviteText">
+                </span>
+
+                <span
+                    id="inviteCode"
+                    class="invite-code">
+                </span>
+
+            </div>
+
+
+            <button
+                id="missionButton"
+                class="black-button"
+                onclick="doMission()">
+
+                انجام مأموریت
+
+            </button>
+
+
+            <button
+                class="outline-button"
+                onclick="missionCompleted()">
+
+                مأموریت را انجام دادم
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+SHOP
+===================================================== -->
+
+<section id="shopPage" class="page">
+
+    <div class="page-title">
+
+        <h2>
+            فروشگاه
+        </h2>
+
+        <p>
+            بسته موردنظر خود را انتخاب کنید
+        </p>
+
+    </div>
+
+
+    <div class="package-list">
+
+
+        <!-- 2GB همراه اول -->
+
+        <button
+            class="package-item"
+            onclick="openPackage('2mci')">
+
+            <div class="package-icon">
+                2G
+            </div>
+
+            <div class="package-info">
+
+                <h3>
+                    ۲ گیگ همراه اول
+                </h3>
+
+                <p>
+                    مأموریت صراف
+                </p>
+
+            </div>
+
+            <div class="package-arrow">
+                ‹
+            </div>
+
+        </button>
+
+
+        <!-- 7GB همراه اول -->
+
+        <button
+            class="package-item"
+            onclick="openPackage('7mci')">
+
+            <div class="package-icon">
+                7G
+            </div>
+
+            <div class="package-info">
+
+                <h3>
+                    ۷ گیگ همراه اول
+                </h3>
+
+                <p>
+                    مأموریت میلی
+                </p>
+
+            </div>
+
+            <div class="package-arrow">
+                ‹
+            </div>
+
+        </button>
+
+
+        <!-- 7GB ایرانسل -->
+
+        <button
+            class="package-item"
+            onclick="openPackage('7ir')">
+
+            <div class="package-icon">
+                7G
+            </div>
+
+            <div class="package-info">
+
+                <h3>
+                    ۷ گیگ ایرانسل
+                </h3>
+
+                <p>
+                    مأموریت بلوجونیور
+                </p>
+
+            </div>
+
+            <div class="package-arrow">
+                ‹
+            </div>
+
+        </button>
+
+    </div>
+
+
+    <div class="more-box">
+
+        <strong>
+            چیزهای بیشتر به‌زودی
+        </strong>
+
+        <span>
+            بسته‌های جدید در آینده اضافه خواهند شد.
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+PACKAGE DETAIL
+===================================================== -->
+
+<section id="packageDetailPage" class="page">
+
+    <button
+        class="back-button"
+        onclick="showPage('shopPage')">
+
+        ← بازگشت به فروشگاه
+
+    </button>
+
+
+    <div class="card shop-detail">
+
+        <h2 id="packageTitle">
+            بسته
+        </h2>
+
+
+        <div class="requirement">
+
+            <div class="requirement-title">
+                مأموریت موردنیاز
+            </div>
+
+            <div
+                id="packageMission"
+                class="requirement-name">
+            </div>
+
+            <p id="packageDescription">
+            </p>
+
+        </div>
+
+
+        <div class="steps-title">
+            برای دریافت بسته چه کاری انجام دهم؟
+        </div>
+
+
+        <div class="shop-step">
+
+            <div class="shop-number">
+                ۱
+            </div>
+
+            <p>
+                مأموریت مشخص‌شده برای این بسته را
+                از بخش مأموریت‌ها انتخاب کنید.
+            </p>
+
+        </div>
+
+
+        <div class="shop-step">
+
+            <div class="shop-number">
+                ۲
+            </div>
+
+            <p>
+                مراحل مأموریت را طبق توضیحات کامل انجام دهید.
+            </p>
+
+        </div>
+
+
+        <div class="shop-step">
+
+            <div class="shop-number">
+                ۳
+            </div>
+
+            <p>
+                از صفحه انجام مأموریت عکس یا فیلم واضح تهیه کنید.
+            </p>
+
+        </div>
+
+
+        <div class="shop-step">
+
+            <div class="shop-number">
+                ۴
+            </div>
+
+            <p>
+                مدرک انجام مأموریت را برای پشتیبانی ارسال کنید.
+            </p>
+
+        </div>
+
+
+        <button
+            class="black-button"
+            onclick="goPackageMission()">
+
+            رفتن به مأموریت
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+SUPPORT
+===================================================== -->
+
+<section id="supportPage" class="page">
+
+    <div class="page-title">
+
+        <h2>
+            پشتیبانی
+        </h2>
+
+        <p>
+            مدارک انجام مأموریت را برای ما ارسال کنید
+        </p>
+
+    </div>
+
+
+    <div class="card support-card">
+
+        <div class="support-icon">
+            ?
+        </div>
+
+
+        <h3>
+            ارسال درخواست
+        </h3>
+
+
+        <p>
+            برای بررسی انجام مأموریت و دریافت جایزه،
+            مدارک مربوط به انجام مأموریت را برای
+            پشتیبانی ارسال کنید.
+        </p>
+
+
+        <div class="what-send">
+
+            <h4>
+                چه چیزی باید بفرستم؟
+            </h4>
+
+
+            <div class="send-item">
+
+                <span>
+                    01
+                </span>
+
+                <span>
+                    عکس واضح از صفحه انجام مأموریت
+                </span>
+
+            </div>
+
+
+            <div class="send-item">
+
+                <span>
+                    02
+                </span>
+
+                <span>
+                    یا فیلم از مراحل انجام مأموریت
+                </span>
+
+            </div>
+
+
+            <div class="send-item">
+
+                <span>
+                    03
+                </span>
+
+                <span>
+                    نام مأموریتی که انجام داده‌اید
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="black-button"
+            onclick="openSupport()">
+
+            پیام دادن به پشتیبانی
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+BOTTOM NAV
+===================================================== -->
+
+<nav class="bottom-nav">
+
+    <button
+        id="navHome"
+        class="nav-button active"
+        onclick="showPage('homePage')">
+
+        <span class="nav-icon">
+            ⌂
+        </span>
+
+        <span class="nav-text">
+            خانه
+        </span>
+
+    </button>
+
+
+    <button
+        id="navMission"
+        class="nav-button"
+        onclick="showPage('missionPage')">
+
+        <span class="nav-icon">
+            ✓
+        </span>
+
+        <span class="nav-text">
+            مأموریت
+        </span>
+
+    </button>
+
+
+    <button
+        id="navShop"
+        class="nav-button"
+        onclick="showPage('shopPage')">
+
+        <span class="nav-icon">
+            □
+        </span>
+
+        <span class="nav-text">
+            فروشگاه
+        </span>
+
+    </button>
+
+
+    <button
+        id="navSupport"
+        class="nav-button"
+        onclick="showPage('supportPage')">
+
+        <span class="nav-icon">
+            ?
+        </span>
+
+        <span class="nav-text">
+            پشتیبانی
+        </span>
+
+    </button>
+
+</nav>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+DATA
+===================================================== */
+
+const missions = {
+
+    saraf: {
+
+        title:"ثبت‌نام در صراف",
+
+        image:"https://cdn.imgurl.ir/uploads/u61760_Screenshot___Google.jpg",
+
+        description:
+        "صراف، راهی ساده و مطمئن برای سرمایه‌گذاری در دلار، طلا و ارزهای دیجیتال است. با ثبت‌نام از طریق لینک زیر، ۵۰ هزار تومان هدیه اولیه دریافت کنید.",
+
+        invite:"کد دعوت:",
+
+        code:"SH8PY",
+
+        url:"https://saraf.app/?ref=SH8PY"
+
+    },
+
+
+    milli: {
+
+        title:"ثبت‌نام در میلی",
+
+        image:"https://cdn.imgurl.ir/uploads/w949426_Screenshot___Google.jpg",
+
+        description:
+        "شما برای سرمایه‌گذاری طلا به میلی دعوت شده‌اید! همین حالا با کد دعوت milli-dwfjg ثبت‌نام کنید و ۱ میلی هدیه بگیرید.",
+
+        invite:"کد دعوت:",
+
+        code:"milli-dwfjg",
+
+        url:"https://milli.gold/app/sign-up?referralCode=milli-dwfjg"
+
+    },
+
+
+    blue: {
+
+        title:"ثبت‌نام در بلوجونیور",
+
+        image:"https://cdn.imgurl.ir/uploads/o09450_Screenshot___Google.jpg",
+
+        description:
+        "این هدیه بازکردنی است… دوست گرامی، شما از طرف اسکور گیمز عزیز به بلوجونیور دعوت شده‌اید. روی لینک زیر کلیک کرده و اپلیکیشن بلوجونیور را نصب کنید. پس از فرآیند بازکردن حساب در بلوجونیور می‌توانید کد QLWUWI را در قسمت کد معرف وارد کنید. بلو؛ بانک، ولی دوست داشتنی",
+
+        invite:"کد معرف:",
+
+        code:"QLWUWI",
+
+        url:"https://jr.blubank.com"
+
+    }
+
+};
+
+
+/* =====================================================
+PACKAGES
+===================================================== */
+
+const packages = {
+
+    "2mci": {
+
+        title:"بسته ۲ گیگ همراه اول",
+
+        mission:"ثبت‌نام در صراف",
+
+        missionId:"saraf",
+
+        description:
+        "برای دریافت این بسته باید مأموریت ثبت‌نام در صراف را انجام دهید."
+
+    },
+
+
+    "7mci": {
+
+        title:"بسته ۷ گیگ همراه اول",
+
+        mission:"ثبت‌نام در میلی",
+
+        missionId:"milli",
+
+        description:
+        "برای دریافت این بسته باید مأموریت ثبت‌نام در میلی را انجام دهید."
+
+    },
+
+
+    "7ir": {
+
+        title:"بسته ۷ گیگ ایرانسل",
+
+        mission:"ثبت‌نام در بلوجونیور",
+
+        missionId:"blue",
+
+        description:
+        "برای دریافت این بسته باید مأموریت ثبت‌نام در بلوجونیور را انجام دهید."
+
+    }
+
+};
+
+
+let currentMission = null;
+let currentPackage = null;
+
+
+/* =====================================================
+PAGE NAVIGATION
+===================================================== */
+
+function showPage(pageId){
+
+    document
+    .querySelectorAll(".page")
+    .forEach(function(page){
+
+        page.classList.remove("active");
+
+    });
+
+
+    const page =
+        document.getElementById(pageId);
+
+
+    if(!page){
+        return;
+    }
+
+
+    page.classList.add("active");
+
+
+    document
+    .querySelectorAll(".nav-button")
+    .forEach(function(button){
+
+        button.classList.remove("active");
+
+    });
+
+
+    if(pageId === "homePage"){
+
+        document
+        .getElementById("navHome")
+        .classList.add("active");
+
+    }
+
+    else if(
+        pageId === "missionPage" ||
+        pageId === "missionDetailPage"
+    ){
+
+        document
+        .getElementById("navMission")
+        .classList.add("active");
+
+    }
+
+    else if(
+        pageId === "shopPage" ||
+        pageId === "packageDetailPage"
+    ){
+
+        document
+        .getElementById("navShop")
+        .classList.add("active");
+
+    }
+
+    else if(pageId === "supportPage"){
+
+        document
+        .getElementById("navSupport")
+        .classList.add("active");
+
+    }
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+OPEN MISSION
+===================================================== */
+
+function openMission(id){
+
+    const mission = missions[id];
+
+    if(!mission){
+        return;
+    }
+
+
+    currentMission = id;
+
+
+    document
+    .getElementById("detailImage")
+    .src = mission.image;
+
+
+    document
+    .getElementById("detailTitle")
+    .textContent = mission.title;
+
+
+    document
+    .getElementById("detailDescription")
+    .textContent = mission.description;
+
+
+    document
+    .getElementById("inviteText")
+    .textContent = mission.invite;
+
+
+    document
+    .getElementById("inviteCode")
+    .textContent = mission.code;
+
+
+    showPage("missionDetailPage");
+
+}
+
+
+/* =====================================================
+DO MISSION
+===================================================== */
+
+function doMission(){
+
+    if(!currentMission){
+        return;
+    }
+
+
+    const mission =
+        missions[currentMission];
+
+
+    window.open(
+        mission.url,
+        "_blank"
+    );
+
+}
+
+
+/* =====================================================
+MISSION COMPLETED
+===================================================== */
+
+function missionCompleted(){
+
+    if(currentMission){
+
+        localStorage.setItem(
+            "completed_"+currentMission,
+            "true"
+        );
+
+    }
+
+
+    alert(
+        "مدرک انجام مأموریت را برای پشتیبانی ارسال کنید."
+    );
+
+
+    showPage("supportPage");
+
+}
+
+
+/* =====================================================
+OPEN PACKAGE
+===================================================== */
+
+function openPackage(id){
+
+    const pack =
+        packages[id];
+
+
+    if(!pack){
+        return;
+    }
+
+
+    currentPackage = id;
+
+
+    document
+    .getElementById("packageTitle")
+    .textContent = pack.title;
+
+
+    document
+    .getElementById("packageMission")
+    .textContent = pack.mission;
+
+
+    document
+    .getElementById("packageDescription")
+    .textContent = pack.description;
+
+
+    showPage("packageDetailPage");
+
+}
+
+
+/* =====================================================
+GO PACKAGE MISSION
+===================================================== */
+
+function goPackageMission(){
+
+    if(!currentPackage){
+        return;
+    }
+
+
+    const pack =
+        packages[currentPackage];
+
+
+    openMission(pack.missionId);
+
+}
+
+
+/* =====================================================
+SUPPORT
+===================================================== */
+
+function openSupport(){
+
+    try{
+
+        if(
+            typeof Goftino !== "undefined" &&
+            typeof Goftino.open === "function"
+        ){
+
+            Goftino.open();
+
+        }
+
+        else{
+
+            alert(
+                "پشتیبانی در حال بارگذاری است. چند ثانیه بعد دوباره امتحان کنید."
+            );
+
+        }
+
+    }
+
+    catch(error){
+
+        console.log(error);
+
+    }
+
+}
+
+</script>
+
+
+<!-- =====================================================
+GOFTINO
+===================================================== -->
+
+<script type="text/javascript">
+
+!function(){
+
+    var i="jb8b5f",
+    d=document,
+    g=d.createElement("script"),
+    s="https://www.goftino.com/widget/"+i,
+    l=localStorage.getItem("goftino_"+i);
+
+    g.type="text/javascript";
+    g.async=!0;
+    g.src=l?s+"?o="+l:s;
+
+    d.getElementsByTagName("head")[0]
+    .appendChild(g);
+
+}();
+
+</script>
+
+</body>
+</html>
