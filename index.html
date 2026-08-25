@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 
 <title>درآمدینو</title>
 
@@ -17,17 +17,8 @@
     -webkit-tap-highlight-color:transparent;
 }
 
-:root{
-    --black:#050505;
-    --card:#111111;
-    --card2:#151515;
-    --border:#292929;
-    --white:#ffffff;
-    --gray:#999999;
-    --gray2:#666666;
-}
-
-html,body{
+html,
+body{
     background:#050505;
 }
 
@@ -35,7 +26,7 @@ body{
     min-height:100vh;
     color:#fff;
     font-family:'Vazirmatn',Tahoma,Arial,sans-serif;
-    padding-bottom:90px;
+    padding-bottom:92px;
 }
 
 button{
@@ -86,7 +77,6 @@ HEADER
     width:100%;
     height:100%;
     object-fit:contain;
-    display:block;
 }
 
 .header h1{
@@ -116,18 +106,19 @@ PAGES
 .page{
     display:none;
     padding:4px 16px;
-    animation:show .18s ease;
+    animation:pageShow .18s ease;
 }
 
 .page.active{
     display:block;
 }
 
-@keyframes show{
+@keyframes pageShow{
     from{
         opacity:0;
         transform:translateY(5px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
@@ -154,7 +145,7 @@ TITLE
 }
 
 /* =========================
-CARDS
+CARD
 ========================= */
 
 .card{
@@ -197,8 +188,9 @@ HOME
     color:#000;
     border-radius:11px;
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
+    font-weight:800;
 }
 
 .info-content{
@@ -607,13 +599,13 @@ SUPPORT
     border-bottom:1px solid #222;
 }
 
-/* =========================
+/* =====================================================
 BOTTOM NAV
-========================= */
+===================================================== */
 
 .bottom-nav{
     position:fixed;
-    z-index:100;
+    z-index:1000;
     left:50%;
     bottom:10px;
     transform:translateX(-50%);
@@ -627,6 +619,9 @@ BOTTOM NAV
     align-items:center;
     justify-content:space-around;
     padding:5px;
+
+    /* جلوگیری از تداخل با ویجت‌ها */
+    overflow:hidden;
 }
 
 .nav-button{
@@ -658,9 +653,47 @@ BOTTOM NAV
     font-weight:700;
 }
 
-/* =========================
+/* =====================================================
+GOFTINO FLOATING BUTTON FIX
+===================================================== */
+
+/*
+   گوفیتینو معمولاً دکمه شناور خودش را با #goftino_w
+   ایجاد می‌کند. این دکمه را مخفی می‌کنیم تا روی منوی
+   پایین قرار نگیرد.
+*/
+
+#goftino_w{
+    display:none !important;
+    visibility:hidden !important;
+    opacity:0 !important;
+    pointer-events:none !important;
+}
+
+/*
+   بعضی نسخه‌های ویجت از کلاس‌های متفاوت استفاده می‌کنند.
+*/
+
+.goftino-widget{
+    display:none !important;
+}
+
+.goftino-button{
+    display:none !important;
+}
+
+/*
+   اگر iframe ویجت ایجاد شود، آن را مخفی می‌کنیم.
+   خود چت هنگام باز شدن همچنان می‌تواند نمایش داده شود.
+*/
+
+iframe[src*="goftino.com/widget"]{
+    z-index:2000 !important;
+}
+
+/* =====================================================
 RESPONSIVE
-========================= */
+===================================================== */
 
 @media(max-width:380px){
 
@@ -683,9 +716,9 @@ RESPONSIVE
 
 <div class="app">
 
-<!-- =========================
+<!-- =====================================================
 HEADER
-========================= -->
+===================================================== -->
 
 <header class="header">
 
@@ -697,8 +730,7 @@ HEADER
 
                 <img
                     src="https://cdn.imgurl.ir/uploads/s673289_ea8cf191-2ac6-42b9-bba7-c52060fa27c4.png"
-                    alt="درآمدینو"
-                >
+                    alt="درآمدینو">
 
             </div>
 
@@ -840,7 +872,7 @@ HOME
 
 
 <!-- =====================================================
-MISSION LIST
+MISSIONS
 ===================================================== -->
 
 <section id="missionPage" class="page">
@@ -861,8 +893,6 @@ MISSION LIST
     <div class="mission-list">
 
 
-        <!-- صراف -->
-
         <button
             class="mission-item"
             onclick="openMission('saraf')">
@@ -870,8 +900,7 @@ MISSION LIST
             <img
                 class="mission-logo"
                 src="https://cdn.imgurl.ir/uploads/u61760_Screenshot___Google.jpg"
-                alt="صراف"
-            >
+                alt="صراف">
 
             <div class="mission-info">
 
@@ -893,8 +922,6 @@ MISSION LIST
         </button>
 
 
-        <!-- میلی -->
-
         <button
             class="mission-item"
             onclick="openMission('milli')">
@@ -902,8 +929,7 @@ MISSION LIST
             <img
                 class="mission-logo"
                 src="https://cdn.imgurl.ir/uploads/w949426_Screenshot___Google.jpg"
-                alt="میلی"
-            >
+                alt="میلی">
 
             <div class="mission-info">
 
@@ -925,8 +951,6 @@ MISSION LIST
         </button>
 
 
-        <!-- بلوجونیور -->
-
         <button
             class="mission-item"
             onclick="openMission('blue')">
@@ -934,8 +958,7 @@ MISSION LIST
             <img
                 class="mission-logo"
                 src="https://cdn.imgurl.ir/uploads/o09450_Screenshot___Google.jpg"
-                alt="بلوجونیور"
-            >
+                alt="بلوجونیور">
 
             <div class="mission-info">
 
@@ -995,8 +1018,7 @@ MISSION DETAIL
             id="detailImage"
             class="detail-image"
             src=""
-            alt="مأموریت"
-        >
+            alt="مأموریت">
 
 
         <div class="detail-content">
@@ -1004,7 +1026,6 @@ MISSION DETAIL
             <h2 id="detailTitle">
                 مأموریت
             </h2>
-
 
             <p id="detailDescription">
             </p>
@@ -1024,7 +1045,6 @@ MISSION DETAIL
 
 
             <button
-                id="missionButton"
                 class="black-button"
                 onclick="doMission()">
 
@@ -1069,9 +1089,6 @@ SHOP
 
     <div class="package-list">
 
-
-        <!-- 2GB همراه اول -->
-
         <button
             class="package-item"
             onclick="openPackage('2mci')">
@@ -1099,8 +1116,6 @@ SHOP
         </button>
 
 
-        <!-- 7GB همراه اول -->
-
         <button
             class="package-item"
             onclick="openPackage('7mci')">
@@ -1127,8 +1142,6 @@ SHOP
 
         </button>
 
-
-        <!-- 7GB ایرانسل -->
 
         <button
             class="package-item"
@@ -1316,9 +1329,9 @@ SUPPORT
 
 
         <p>
-            برای بررسی انجام مأموریت و دریافت جایزه،
-            مدارک مربوط به انجام مأموریت را برای
-            پشتیبانی ارسال کنید.
+            عکس صفحه یا فیلم از صفحه انجام مأموریت
+            را به پشتیبانی بفرستید تا درخواست شما
+            بررسی شود.
         </p>
 
 
@@ -1331,9 +1344,7 @@ SUPPORT
 
             <div class="send-item">
 
-                <span>
-                    01
-                </span>
+                <span>01</span>
 
                 <span>
                     عکس واضح از صفحه انجام مأموریت
@@ -1344,9 +1355,7 @@ SUPPORT
 
             <div class="send-item">
 
-                <span>
-                    02
-                </span>
+                <span>02</span>
 
                 <span>
                     یا فیلم از مراحل انجام مأموریت
@@ -1357,9 +1366,7 @@ SUPPORT
 
             <div class="send-item">
 
-                <span>
-                    03
-                </span>
+                <span>03</span>
 
                 <span>
                     نام مأموریتی که انجام داده‌اید
@@ -1460,123 +1467,77 @@ BOTTOM NAV
 <script>
 
 /* =====================================================
-DATA
+MISSIONS DATA
 ===================================================== */
 
-const missions = {
+const missions={
 
-    saraf: {
-
+    saraf:{
         title:"ثبت‌نام در صراف",
-
         image:"https://cdn.imgurl.ir/uploads/u61760_Screenshot___Google.jpg",
-
-        description:
-        "صراف، راهی ساده و مطمئن برای سرمایه‌گذاری در دلار، طلا و ارزهای دیجیتال است. با ثبت‌نام از طریق لینک زیر، ۵۰ هزار تومان هدیه اولیه دریافت کنید.",
-
+        description:"صراف، راهی ساده و مطمئن برای سرمایه‌گذاری در دلار، طلا و ارزهای دیجیتال است. با ثبت‌نام از طریق لینک زیر، ۵۰ هزار تومان هدیه اولیه دریافت کنید.",
         invite:"کد دعوت:",
-
         code:"SH8PY",
-
         url:"https://saraf.app/?ref=SH8PY"
-
     },
 
-
-    milli: {
-
+    milli:{
         title:"ثبت‌نام در میلی",
-
         image:"https://cdn.imgurl.ir/uploads/w949426_Screenshot___Google.jpg",
-
-        description:
-        "شما برای سرمایه‌گذاری طلا به میلی دعوت شده‌اید! همین حالا با کد دعوت milli-dwfjg ثبت‌نام کنید و ۱ میلی هدیه بگیرید.",
-
+        description:"شما برای سرمایه‌گذاری طلا به میلی دعوت شده‌اید! همین حالا با کد دعوت milli-dwfjg ثبت‌نام کنید و ۱ میلی هدیه بگیرید!",
         invite:"کد دعوت:",
-
         code:"milli-dwfjg",
-
         url:"https://milli.gold/app/sign-up?referralCode=milli-dwfjg"
-
     },
 
-
-    blue: {
-
+    blue:{
         title:"ثبت‌نام در بلوجونیور",
-
         image:"https://cdn.imgurl.ir/uploads/o09450_Screenshot___Google.jpg",
-
-        description:
-        "این هدیه بازکردنی است… دوست گرامی، شما از طرف اسکور گیمز عزیز به بلوجونیور دعوت شده‌اید. روی لینک زیر کلیک کرده و اپلیکیشن بلوجونیور را نصب کنید. پس از فرآیند بازکردن حساب در بلوجونیور می‌توانید کد QLWUWI را در قسمت کد معرف وارد کنید. بلو؛ بانک، ولی دوست داشتنی",
-
+        description:"این هدیه بازکردنی است… دوست گرامی، شما از طرف اسکور گیمز عزیز به بلوجونیور دعوت شده‌اید. روی لینک زیر کلیک کرده و اپلیکیشن بلوجونیور را نصب کنید. پس از فرآیند بازکردن حساب در بلوجونیور می‌توانید کد QLWUWI را در قسمت کد معرف وارد کنید. بلو؛ بانک، ولی دوست داشتنی",
         invite:"کد معرف:",
-
         code:"QLWUWI",
-
         url:"https://jr.blubank.com"
-
     }
 
 };
 
 
 /* =====================================================
-PACKAGES
+PACKAGES DATA
 ===================================================== */
 
-const packages = {
+const packages={
 
-    "2mci": {
-
+    "2mci":{
         title:"بسته ۲ گیگ همراه اول",
-
         mission:"ثبت‌نام در صراف",
-
         missionId:"saraf",
-
-        description:
-        "برای دریافت این بسته باید مأموریت ثبت‌نام در صراف را انجام دهید."
-
+        description:"برای دریافت این بسته باید مأموریت ثبت‌نام در صراف را انجام دهید."
     },
 
-
-    "7mci": {
-
+    "7mci":{
         title:"بسته ۷ گیگ همراه اول",
-
         mission:"ثبت‌نام در میلی",
-
         missionId:"milli",
-
-        description:
-        "برای دریافت این بسته باید مأموریت ثبت‌نام در میلی را انجام دهید."
-
+        description:"برای دریافت این بسته باید مأموریت ثبت‌نام در میلی را انجام دهید."
     },
 
-
-    "7ir": {
-
+    "7ir":{
         title:"بسته ۷ گیگ ایرانسل",
-
         mission:"ثبت‌نام در بلوجونیور",
-
         missionId:"blue",
-
-        description:
-        "برای دریافت این بسته باید مأموریت ثبت‌نام در بلوجونیور را انجام دهید."
-
+        description:"برای دریافت این بسته باید مأموریت ثبت‌نام در بلوجونیور را انجام دهید."
     }
 
 };
 
 
-let currentMission = null;
-let currentPackage = null;
+let currentMission=null;
+let currentPackage=null;
 
 
 /* =====================================================
-PAGE NAVIGATION
+PAGE
 ===================================================== */
 
 function showPage(pageId){
@@ -1590,9 +1551,7 @@ function showPage(pageId){
     });
 
 
-    const page =
-        document.getElementById(pageId);
-
+    const page=document.getElementById(pageId);
 
     if(!page){
         return;
@@ -1611,7 +1570,7 @@ function showPage(pageId){
     });
 
 
-    if(pageId === "homePage"){
+    if(pageId==="homePage"){
 
         document
         .getElementById("navHome")
@@ -1620,8 +1579,8 @@ function showPage(pageId){
     }
 
     else if(
-        pageId === "missionPage" ||
-        pageId === "missionDetailPage"
+        pageId==="missionPage" ||
+        pageId==="missionDetailPage"
     ){
 
         document
@@ -1631,8 +1590,8 @@ function showPage(pageId){
     }
 
     else if(
-        pageId === "shopPage" ||
-        pageId === "packageDetailPage"
+        pageId==="shopPage" ||
+        pageId==="packageDetailPage"
     ){
 
         document
@@ -1641,7 +1600,7 @@ function showPage(pageId){
 
     }
 
-    else if(pageId === "supportPage"){
+    else if(pageId==="supportPage"){
 
         document
         .getElementById("navSupport")
@@ -1650,10 +1609,7 @@ function showPage(pageId){
     }
 
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+    window.scrollTo(0,0);
 
 }
 
@@ -1664,39 +1620,39 @@ OPEN MISSION
 
 function openMission(id){
 
-    const mission = missions[id];
+    const mission=missions[id];
 
     if(!mission){
         return;
     }
 
 
-    currentMission = id;
+    currentMission=id;
 
 
     document
     .getElementById("detailImage")
-    .src = mission.image;
+    .src=mission.image;
 
 
     document
     .getElementById("detailTitle")
-    .textContent = mission.title;
+    .textContent=mission.title;
 
 
     document
     .getElementById("detailDescription")
-    .textContent = mission.description;
+    .textContent=mission.description;
 
 
     document
     .getElementById("inviteText")
-    .textContent = mission.invite;
+    .textContent=mission.invite;
 
 
     document
     .getElementById("inviteCode")
-    .textContent = mission.code;
+    .textContent=mission.code;
 
 
     showPage("missionDetailPage");
@@ -1715,8 +1671,7 @@ function doMission(){
     }
 
 
-    const mission =
-        missions[currentMission];
+    const mission=missions[currentMission];
 
 
     window.open(
@@ -1743,47 +1698,40 @@ function missionCompleted(){
     }
 
 
-    alert(
-        "مدرک انجام مأموریت را برای پشتیبانی ارسال کنید."
-    );
-
-
     showPage("supportPage");
 
 }
 
 
 /* =====================================================
-OPEN PACKAGE
+PACKAGE
 ===================================================== */
 
 function openPackage(id){
 
-    const pack =
-        packages[id];
-
+    const pack=packages[id];
 
     if(!pack){
         return;
     }
 
 
-    currentPackage = id;
+    currentPackage=id;
 
 
     document
     .getElementById("packageTitle")
-    .textContent = pack.title;
+    .textContent=pack.title;
 
 
     document
     .getElementById("packageMission")
-    .textContent = pack.mission;
+    .textContent=pack.mission;
 
 
     document
     .getElementById("packageDescription")
-    .textContent = pack.description;
+    .textContent=pack.description;
 
 
     showPage("packageDetailPage");
@@ -1792,7 +1740,7 @@ function openPackage(id){
 
 
 /* =====================================================
-GO PACKAGE MISSION
+PACKAGE -> MISSION
 ===================================================== */
 
 function goPackageMission(){
@@ -1802,9 +1750,7 @@ function goPackageMission(){
     }
 
 
-    const pack =
-        packages[currentPackage];
-
+    const pack=packages[currentPackage];
 
     openMission(pack.missionId);
 
@@ -1817,32 +1763,57 @@ SUPPORT
 
 function openSupport(){
 
-    try{
+    /*
+      گوفیتینو بعد از بارگذاری معمولاً Goftino.open()
+      را در اختیار صفحه قرار می‌دهد.
+    */
+
+    if(
+        typeof Goftino!=="undefined" &&
+        typeof Goftino.open==="function"
+    ){
+
+        Goftino.open();
+
+        return;
+
+    }
+
+
+    /*
+      اگر هنوز اسکریپت گوفیتینو لود نشده باشد،
+      کمی صبر می‌کنیم و دوباره امتحان می‌کنیم.
+    */
+
+    let tries=0;
+
+    const timer=setInterval(function(){
+
+        tries++;
 
         if(
-            typeof Goftino !== "undefined" &&
-            typeof Goftino.open === "function"
+            typeof Goftino!=="undefined" &&
+            typeof Goftino.open==="function"
         ){
+
+            clearInterval(timer);
 
             Goftino.open();
 
         }
 
-        else{
+
+        if(tries>=20){
+
+            clearInterval(timer);
 
             alert(
-                "پشتیبانی در حال بارگذاری است. چند ثانیه بعد دوباره امتحان کنید."
+                "پشتیبانی هنوز بارگذاری نشده است. لطفاً چند ثانیه بعد دوباره امتحان کنید."
             );
 
         }
 
-    }
-
-    catch(error){
-
-        console.log(error);
-
-    }
+    },300);
 
 }
 
@@ -1864,8 +1835,12 @@ GOFTINO
     l=localStorage.getItem("goftino_"+i);
 
     g.type="text/javascript";
-    g.async=!0;
-    g.src=l?s+"?o="+l:s;
+
+    g.async=true;
+
+    g.src=l
+        ? s+"?o="+l
+        : s;
 
     d.getElementsByTagName("head")[0]
     .appendChild(g);
@@ -1875,4 +1850,4 @@ GOFTINO
 </script>
 
 </body>
-</html>
+    </html>
