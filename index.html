@@ -7,7 +7,6 @@
 <title>درآمدینو</title>
 
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
 
 *{
@@ -17,16 +16,15 @@
     -webkit-tap-highlight-color:transparent;
 }
 
-html,
-body{
+html,body{
     background:#050505;
+    color:#fff;
 }
 
 body{
     min-height:100vh;
-    color:#fff;
-    font-family:'Vazirmatn',Tahoma,Arial,sans-serif;
-    padding-bottom:92px;
+    font-family:'Vazirmatn',Tahoma,sans-serif;
+    padding-bottom:95px;
 }
 
 button{
@@ -40,18 +38,16 @@ button{
     margin:auto;
 }
 
-/* =========================
-HEADER
-========================= */
+/* HEADER */
 
 .header{
-    padding:20px 17px 10px;
+    padding:18px 16px 8px;
 }
 
 .header-line{
     display:flex;
-    align-items:center;
     justify-content:space-between;
+    align-items:center;
 }
 
 .logo-title{
@@ -63,14 +59,10 @@ HEADER
 .logo{
     width:48px;
     height:48px;
-    border-radius:13px;
-    overflow:hidden;
     background:#111;
     border:1px solid #292929;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-shrink:0;
+    border-radius:14px;
+    overflow:hidden;
 }
 
 .logo img{
@@ -99,35 +91,30 @@ HEADER
     border-radius:11px;
 }
 
-/* =========================
-PAGES
-========================= */
+/* PAGES */
 
 .page{
     display:none;
     padding:4px 16px;
-    animation:pageShow .18s ease;
+    animation:showPage .18s ease;
 }
 
 .page.active{
     display:block;
 }
 
-@keyframes pageShow{
+@keyframes showPage{
     from{
         opacity:0;
         transform:translateY(5px);
     }
-
     to{
         opacity:1;
         transform:translateY(0);
     }
 }
 
-/* =========================
-TITLE
-========================= */
+/* TITLES */
 
 .page-title{
     margin:20px 2px 16px;
@@ -144,9 +131,7 @@ TITLE
     margin-top:5px;
 }
 
-/* =========================
-CARD
-========================= */
+/* CARDS */
 
 .card{
     background:#111;
@@ -155,9 +140,7 @@ CARD
     margin-bottom:13px;
 }
 
-/* =========================
-HOME
-========================= */
+/* HOME */
 
 .home-intro{
     padding:21px;
@@ -168,7 +151,8 @@ HOME
     margin-bottom:10px;
 }
 
-.home-intro p{
+.home-intro p,
+.rubika-box p{
     color:#999;
     font-size:12px;
     line-height:2.2;
@@ -217,12 +201,6 @@ HOME
     margin-bottom:8px;
 }
 
-.rubika-box p{
-    color:#888;
-    font-size:11px;
-    line-height:2;
-}
-
 .divider{
     height:1px;
     background:#242424;
@@ -249,9 +227,7 @@ HOME
     font-weight:800;
 }
 
-/* =========================
-MISSION
-========================= */
+/* MISSIONS */
 
 .mission-list{
     display:flex;
@@ -284,13 +260,10 @@ MISSION
     object-fit:cover;
     border-radius:13px;
     margin-left:13px;
-    order:2;
-    background:#fff;
 }
 
 .mission-info{
     flex:1;
-    order:1;
 }
 
 .mission-info h3{
@@ -306,15 +279,12 @@ MISSION
 }
 
 .arrow{
-    order:0;
     color:#777;
     font-size:20px;
     margin-right:7px;
 }
 
-/* =========================
-MORE
-========================= */
+/* MORE */
 
 .more-box{
     margin-top:18px;
@@ -338,9 +308,7 @@ MORE
     font-size:10px;
 }
 
-/* =========================
-DETAIL
-========================= */
+/* DETAIL */
 
 .back-button{
     border:0;
@@ -370,7 +338,7 @@ DETAIL
     margin-bottom:10px;
 }
 
-.detail-content p{
+.detail-content > p{
     color:#999;
     font-size:12px;
     line-height:2.2;
@@ -422,9 +390,7 @@ DETAIL
     margin-top:9px;
 }
 
-/* =========================
-SHOP
-========================= */
+/* SHOP */
 
 .package-list{
     display:flex;
@@ -549,9 +515,7 @@ SHOP
     line-height:1.9;
 }
 
-/* =========================
-SUPPORT
-========================= */
+/* SUPPORT */
 
 .support-card{
     padding:20px;
@@ -599,9 +563,9 @@ SUPPORT
     border-bottom:1px solid #222;
 }
 
-/* =====================================================
+/* =========================
 BOTTOM NAV
-===================================================== */
+========================= */
 
 .bottom-nav{
     position:fixed;
@@ -619,9 +583,6 @@ BOTTOM NAV
     align-items:center;
     justify-content:space-around;
     padding:5px;
-
-    /* جلوگیری از تداخل با ویجت‌ها */
-    overflow:hidden;
 }
 
 .nav-button{
@@ -653,47 +614,29 @@ BOTTOM NAV
     font-weight:700;
 }
 
-/* =====================================================
-GOFTINO FLOATING BUTTON FIX
-===================================================== */
+/* =========================
+GOFTINO
+========================= */
 
 /*
-   گوفیتینو معمولاً دکمه شناور خودش را با #goftino_w
-   ایجاد می‌کند. این دکمه را مخفی می‌کنیم تا روی منوی
-   پایین قرار نگیرد.
+حباب شناور گوفیتینو بالای منوی پایین قرار می‌گیرد
+و پشتیبانی حذف نمی‌شود.
 */
 
 #goftino_w{
-    display:none !important;
-    visibility:hidden !important;
-    opacity:0 !important;
-    pointer-events:none !important;
+    bottom:88px !important;
+    z-index:900 !important;
 }
 
 /*
-   بعضی نسخه‌های ویجت از کلاس‌های متفاوت استفاده می‌کنند.
+باقی ویجت‌ها هم نباید روی منوی پایین قرار بگیرند.
 */
 
 .goftino-widget{
-    display:none !important;
+    z-index:900 !important;
 }
 
-.goftino-button{
-    display:none !important;
-}
-
-/*
-   اگر iframe ویجت ایجاد شود، آن را مخفی می‌کنیم.
-   خود چت هنگام باز شدن همچنان می‌تواند نمایش داده شود.
-*/
-
-iframe[src*="goftino.com/widget"]{
-    z-index:2000 !important;
-}
-
-/* =====================================================
-RESPONSIVE
-===================================================== */
+/* موبایل کوچک */
 
 @media(max-width:380px){
 
@@ -708,7 +651,6 @@ RESPONSIVE
     }
 
 }
-
 </style>
 </head>
 
@@ -716,748 +658,501 @@ RESPONSIVE
 
 <div class="app">
 
-<!-- =====================================================
-HEADER
-===================================================== -->
+<!-- HEADER -->
 
 <header class="header">
 
-    <div class="header-line">
+<div class="header-line">
 
-        <div class="logo-title">
+<div class="logo-title">
 
-            <div class="logo">
+<div class="logo">
+<img src="https://cdn.imgurl.ir/uploads/s673289_ea8cf191-2ac6-42b9-bba7-c52060fa27c4.png">
+</div>
 
-                <img
-                    src="https://cdn.imgurl.ir/uploads/s673289_ea8cf191-2ac6-42b9-bba7-c52060fa27c4.png"
-                    alt="درآمدینو">
+<div>
+<h1>درآمدینو</h1>
+<p>انجام مأموریت، دریافت جایزه</p>
+</div>
 
-            </div>
+</div>
 
-            <div>
+<button class="header-button">•••</button>
 
-                <h1>درآمدینو</h1>
-
-                <p>
-                    انجام مأموریت، دریافت جایزه
-                </p>
-
-            </div>
-
-        </div>
-
-        <button class="header-button">
-            •••
-        </button>
-
-    </div>
+</div>
 
 </header>
 
 
-<!-- =====================================================
-HOME
-===================================================== -->
+<!-- ================= HOME ================= -->
 
 <section id="homePage" class="page active">
 
-    <div class="page-title">
+<div class="page-title">
+<h2>خانه</h2>
+<p>اطلاعات برنامه و نحوه فعالیت</p>
+</div>
 
-        <h2>خانه</h2>
+<div class="card home-intro">
 
-        <p>
-            اطلاعات برنامه و نحوه فعالیت
-        </p>
+<h3>درآمدینو چیست؟</h3>
 
-    </div>
+<p>
+درآمدینو یک برنامه برای انجام مأموریت‌های مختلف
+و دریافت پاداش است. مأموریت‌های موجود را انجام دهید
+و پس از ارسال مدرک و تأیید پشتیبانی، جایزه خود را
+دریافت کنید.
+</p>
 
+</div>
 
-    <div class="card home-intro">
+<div class="card home-info">
 
-        <h3>
-            درآمدینو چیست؟
-        </h3>
+<div class="info-icon">ⓘ</div>
 
-        <p>
-            درآمدینو یک برنامه برای انجام مأموریت‌های
-            مختلف و دریافت پاداش است.
-            مأموریت‌های موجود را انجام دهید و پس از
-            ارسال مدرک و تأیید پشتیبانی، جایزه خود را
-            دریافت کنید.
-        </p>
+<div class="info-content">
 
-    </div>
+<h4>نحوه کار برنامه</h4>
 
+<p>
+مأموریت موردنظر را انتخاب کنید، توضیحات را بخوانید،
+مأموریت را انجام دهید و عکس یا فیلم انجام مأموریت
+را برای پشتیبانی ارسال کنید.
+</p>
 
-    <div class="card home-info">
+</div>
 
-        <div class="info-icon">
-            ⓘ
-        </div>
+</div>
 
-        <div class="info-content">
+<div class="card rubika-box">
 
-            <h4>
-                نحوه کار برنامه
-            </h4>
+<h3>کانال روبیکا</h3>
 
-            <p>
-                مأموریت موردنظر را انتخاب کنید،
-                توضیحات را بخوانید، مأموریت را انجام دهید
-                و عکس یا فیلم انجام مأموریت را برای
-                پشتیبانی ارسال کنید.
-            </p>
+<p>
+برای اطلاع از مأموریت‌های جدید، بسته‌های جدید،
+اخبار و اطلاعیه‌های درآمدینو، کانال روبیکا را دنبال کنید.
+</p>
 
-        </div>
+<div class="divider"></div>
 
-    </div>
+<div class="list-row">
+<div class="list-number">۱</div>
+<span>مشاهده مأموریت‌های جدید</span>
+</div>
 
+<div class="list-row">
+<div class="list-number">۲</div>
+<span>اطلاع از بسته‌های جدید</span>
+</div>
 
-    <div class="card rubika-box">
+<div class="list-row">
+<div class="list-number">۳</div>
+<span>دریافت اطلاعیه‌های برنامه</span>
+</div>
 
-        <h3>
-            کانال روبیکا
-        </h3>
+</div>
 
-        <p>
-            برای اطلاع از مأموریت‌های جدید،
-            بسته‌های جدید، اخبار و اطلاعیه‌های
-            درآمدینو، کانال روبیکا را دنبال کنید.
-        </p>
+<div class="card home-info">
 
-        <div class="divider"></div>
+<div class="info-icon">?</div>
 
-        <div class="list-row">
-            <div class="list-number">۱</div>
-            <span>مشاهده مأموریت‌های جدید</span>
-        </div>
+<div class="info-content">
 
-        <div class="list-row">
-            <div class="list-number">۲</div>
-            <span>اطلاع از بسته‌های جدید</span>
-        </div>
+<h4>قوانین کلی</h4>
 
-        <div class="list-row">
-            <div class="list-number">۳</div>
-            <span>دریافت اطلاعیه‌های برنامه</span>
-        </div>
+<p>
+قبل از انجام هر مأموریت شرایط آن را به‌طور کامل
+مطالعه کنید. دریافت جایزه پس از بررسی مدرک توسط
+پشتیبانی انجام می‌شود.
+</p>
 
-    </div>
+</div>
 
-
-    <div class="card home-info">
-
-        <div class="info-icon">
-            ?
-        </div>
-
-        <div class="info-content">
-
-            <h4>
-                قوانین کلی
-            </h4>
-
-            <p>
-                قبل از انجام هر مأموریت شرایط آن را
-                به‌طور کامل مطالعه کنید. دریافت جایزه
-                پس از بررسی مدرک توسط پشتیبانی انجام
-                می‌شود.
-            </p>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =====================================================
-MISSIONS
-===================================================== -->
+<!-- ================= MISSIONS ================= -->
 
 <section id="missionPage" class="page">
 
-    <div class="page-title">
+<div class="page-title">
 
-        <h2>
-            مأموریت‌ها
-        </h2>
+<h2>مأموریت‌ها</h2>
 
-        <p>
-            مأموریت موردنظر خود را انتخاب کنید
-        </p>
+<p>مأموریت موردنظر خود را انتخاب کنید</p>
 
-    </div>
+</div>
 
+<div class="mission-list">
 
-    <div class="mission-list">
+<button class="mission-item" onclick="openMission('saraf')">
 
+<img class="mission-logo"
+src="https://cdn.imgurl.ir/uploads/u61760_Screenshot___Google.jpg">
 
-        <button
-            class="mission-item"
-            onclick="openMission('saraf')">
+<div class="mission-info">
 
-            <img
-                class="mission-logo"
-                src="https://cdn.imgurl.ir/uploads/u61760_Screenshot___Google.jpg"
-                alt="صراف">
+<h3>ثبت‌نام در صراف</h3>
 
-            <div class="mission-info">
+<p>
+ثبت‌نام در صراف و دریافت ۵۰ هزار تومان هدیه اولیه
+</p>
 
-                <h3>
-                    ثبت‌نام در صراف
-                </h3>
+</div>
 
-                <p>
-                    ثبت‌نام در صراف و دریافت
-                    ۵۰ هزار تومان هدیه اولیه
-                </p>
+<div class="arrow">‹</div>
 
-            </div>
-
-            <div class="arrow">
-                ‹
-            </div>
-
-        </button>
+</button>
 
 
-        <button
-            class="mission-item"
-            onclick="openMission('milli')">
+<button class="mission-item" onclick="openMission('milli')">
 
-            <img
-                class="mission-logo"
-                src="https://cdn.imgurl.ir/uploads/w949426_Screenshot___Google.jpg"
-                alt="میلی">
+<img class="mission-logo"
+src="https://cdn.imgurl.ir/uploads/w949426_Screenshot___Google.jpg">
 
-            <div class="mission-info">
+<div class="mission-info">
 
-                <h3>
-                    ثبت‌نام در میلی
-                </h3>
+<h3>ثبت‌نام در میلی</h3>
 
-                <p>
-                    ثبت‌نام با کد دعوت و دریافت
-                    ۱ میلی هدیه
-                </p>
+<p>
+ثبت‌نام با کد دعوت و دریافت ۱ میلی هدیه
+</p>
 
-            </div>
+</div>
 
-            <div class="arrow">
-                ‹
-            </div>
+<div class="arrow">‹</div>
 
-        </button>
+</button>
 
 
-        <button
-            class="mission-item"
-            onclick="openMission('blue')">
+<button class="mission-item" onclick="openMission('blue')">
 
-            <img
-                class="mission-logo"
-                src="https://cdn.imgurl.ir/uploads/o09450_Screenshot___Google.jpg"
-                alt="بلوجونیور">
+<img class="mission-logo"
+src="https://cdn.imgurl.ir/uploads/o09450_Screenshot___Google.jpg">
 
-            <div class="mission-info">
+<div class="mission-info">
 
-                <h3>
-                    ثبت‌نام در بلوجونیور
-                </h3>
+<h3>ثبت‌نام در بلوجونیور</h3>
 
-                <p>
-                    افتتاح حساب و وارد کردن
-                    کد معرف QLWUWI
-                </p>
+<p>
+افتتاح حساب و وارد کردن کد معرف QLWUWI
+</p>
 
-            </div>
+</div>
 
-            <div class="arrow">
-                ‹
-            </div>
+<div class="arrow">‹</div>
 
-        </button>
+</button>
 
-    </div>
+</div>
 
+<div class="more-box">
 
-    <div class="more-box">
+<strong>چیزهای بیشتر به‌زودی</strong>
 
-        <strong>
-            چیزهای بیشتر به‌زودی
-        </strong>
+<span>
+مأموریت‌های جدید در آینده اضافه خواهند شد.
+</span>
 
-        <span>
-            مأموریت‌های جدید در آینده اضافه خواهند شد.
-        </span>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =====================================================
-MISSION DETAIL
-===================================================== -->
+<!-- ================= MISSION DETAIL ================= -->
 
 <section id="missionDetailPage" class="page">
 
-    <button
-        class="back-button"
-        onclick="showPage('missionPage')">
+<button class="back-button" onclick="showPage('missionPage')">
+← بازگشت به مأموریت‌ها
+</button>
 
-        ← بازگشت به مأموریت‌ها
+<div class="card detail-card">
 
-    </button>
+<img id="detailImage" class="detail-image">
 
+<div class="detail-content">
 
-    <div class="card detail-card">
+<h2 id="detailTitle">مأموریت</h2>
 
-        <img
-            id="detailImage"
-            class="detail-image"
-            src=""
-            alt="مأموریت">
+<p id="detailDescription"></p>
 
+<div class="invite">
 
-        <div class="detail-content">
+<span id="inviteText"></span>
 
-            <h2 id="detailTitle">
-                مأموریت
-            </h2>
+<span id="inviteCode" class="invite-code"></span>
 
-            <p id="detailDescription">
-            </p>
+</div>
 
+<button class="black-button" onclick="doMission()">
+انجام مأموریت
+</button>
 
-            <div class="invite">
+<button class="outline-button" onclick="missionCompleted()">
+مأموریت را انجام دادم
+</button>
 
-                <span id="inviteText">
-                </span>
+</div>
 
-                <span
-                    id="inviteCode"
-                    class="invite-code">
-                </span>
-
-            </div>
-
-
-            <button
-                class="black-button"
-                onclick="doMission()">
-
-                انجام مأموریت
-
-            </button>
-
-
-            <button
-                class="outline-button"
-                onclick="missionCompleted()">
-
-                مأموریت را انجام دادم
-
-            </button>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =====================================================
-SHOP
-===================================================== -->
+<!-- ================= SHOP ================= -->
 
 <section id="shopPage" class="page">
 
-    <div class="page-title">
+<div class="page-title">
 
-        <h2>
-            فروشگاه
-        </h2>
+<h2>فروشگاه</h2>
 
-        <p>
-            بسته موردنظر خود را انتخاب کنید
-        </p>
+<p>بسته موردنظر خود را انتخاب کنید</p>
 
-    </div>
+</div>
 
+<div class="package-list">
 
-    <div class="package-list">
+<button class="package-item" onclick="openPackage('2mci')">
 
-        <button
-            class="package-item"
-            onclick="openPackage('2mci')">
+<div class="package-icon">2G</div>
 
-            <div class="package-icon">
-                2G
-            </div>
+<div class="package-info">
 
-            <div class="package-info">
+<h3>۲ گیگ همراه اول</h3>
 
-                <h3>
-                    ۲ گیگ همراه اول
-                </h3>
+<p>مأموریت صراف</p>
 
-                <p>
-                    مأموریت صراف
-                </p>
+</div>
 
-            </div>
+<div class="package-arrow">‹</div>
 
-            <div class="package-arrow">
-                ‹
-            </div>
-
-        </button>
+</button>
 
 
-        <button
-            class="package-item"
-            onclick="openPackage('7mci')">
+<button class="package-item" onclick="openPackage('7mci')">
 
-            <div class="package-icon">
-                7G
-            </div>
+<div class="package-icon">7G</div>
 
-            <div class="package-info">
+<div class="package-info">
 
-                <h3>
-                    ۷ گیگ همراه اول
-                </h3>
+<h3>۷ گیگ همراه اول</h3>
 
-                <p>
-                    مأموریت میلی
-                </p>
+<p>مأموریت میلی</p>
 
-            </div>
+</div>
 
-            <div class="package-arrow">
-                ‹
-            </div>
+<div class="package-arrow">‹</div>
 
-        </button>
+</button>
 
 
-        <button
-            class="package-item"
-            onclick="openPackage('7ir')">
+<button class="package-item" onclick="openPackage('7ir')">
 
-            <div class="package-icon">
-                7G
-            </div>
+<div class="package-icon">7G</div>
 
-            <div class="package-info">
+<div class="package-info">
 
-                <h3>
-                    ۷ گیگ ایرانسل
-                </h3>
+<h3>۷ گیگ ایرانسل</h3>
 
-                <p>
-                    مأموریت بلوجونیور
-                </p>
+<p>مأموریت بلوجونیور</p>
 
-            </div>
+</div>
 
-            <div class="package-arrow">
-                ‹
-            </div>
+<div class="package-arrow">‹</div>
 
-        </button>
+</button>
 
-    </div>
+</div>
 
+<div class="more-box">
 
-    <div class="more-box">
+<strong>چیزهای بیشتر به‌زودی</strong>
 
-        <strong>
-            چیزهای بیشتر به‌زودی
-        </strong>
+<span>
+بسته‌های جدید در آینده اضافه خواهند شد.
+</span>
 
-        <span>
-            بسته‌های جدید در آینده اضافه خواهند شد.
-        </span>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =====================================================
-PACKAGE DETAIL
-===================================================== -->
+<!-- ================= PACKAGE DETAIL ================= -->
 
 <section id="packageDetailPage" class="page">
 
-    <button
-        class="back-button"
-        onclick="showPage('shopPage')">
+<button class="back-button" onclick="showPage('shopPage')">
+← بازگشت به فروشگاه
+</button>
 
-        ← بازگشت به فروشگاه
+<div class="card shop-detail">
 
-    </button>
+<h2 id="packageTitle">بسته</h2>
 
+<div class="requirement">
 
-    <div class="card shop-detail">
+<div class="requirement-title">
+مأموریت موردنیاز
+</div>
 
-        <h2 id="packageTitle">
-            بسته
-        </h2>
+<div id="packageMission" class="requirement-name"></div>
 
+<p id="packageDescription"></p>
 
-        <div class="requirement">
+</div>
 
-            <div class="requirement-title">
-                مأموریت موردنیاز
-            </div>
+<div class="steps-title">
+برای دریافت بسته چه کاری انجام دهم؟
+</div>
 
-            <div
-                id="packageMission"
-                class="requirement-name">
-            </div>
+<div class="shop-step">
 
-            <p id="packageDescription">
-            </p>
+<div class="shop-number">۱</div>
 
-        </div>
+<p>
+مأموریت مشخص‌شده برای این بسته را از بخش مأموریت‌ها انتخاب کنید.
+</p>
 
+</div>
 
-        <div class="steps-title">
-            برای دریافت بسته چه کاری انجام دهم؟
-        </div>
+<div class="shop-step">
 
+<div class="shop-number">۲</div>
 
-        <div class="shop-step">
+<p>
+مراحل مأموریت را طبق توضیحات کامل انجام دهید.
+</p>
 
-            <div class="shop-number">
-                ۱
-            </div>
+</div>
 
-            <p>
-                مأموریت مشخص‌شده برای این بسته را
-                از بخش مأموریت‌ها انتخاب کنید.
-            </p>
+<div class="shop-step">
 
-        </div>
+<div class="shop-number">۳</div>
 
+<p>
+از صفحه انجام مأموریت عکس یا فیلم واضح تهیه کنید.
+</p>
 
-        <div class="shop-step">
+</div>
 
-            <div class="shop-number">
-                ۲
-            </div>
+<div class="shop-step">
 
-            <p>
-                مراحل مأموریت را طبق توضیحات کامل انجام دهید.
-            </p>
+<div class="shop-number">۴</div>
 
-        </div>
+<p>
+مدرک انجام مأموریت را برای پشتیبانی ارسال کنید.
+</p>
 
+</div>
 
-        <div class="shop-step">
+<button class="black-button" onclick="goPackageMission()">
+رفتن به مأموریت
+</button>
 
-            <div class="shop-number">
-                ۳
-            </div>
-
-            <p>
-                از صفحه انجام مأموریت عکس یا فیلم واضح تهیه کنید.
-            </p>
-
-        </div>
-
-
-        <div class="shop-step">
-
-            <div class="shop-number">
-                ۴
-            </div>
-
-            <p>
-                مدرک انجام مأموریت را برای پشتیبانی ارسال کنید.
-            </p>
-
-        </div>
-
-
-        <button
-            class="black-button"
-            onclick="goPackageMission()">
-
-            رفتن به مأموریت
-
-        </button>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =====================================================
-SUPPORT
-===================================================== -->
+<!-- ================= SUPPORT ================= -->
 
 <section id="supportPage" class="page">
 
-    <div class="page-title">
+<div class="page-title">
 
-        <h2>
-            پشتیبانی
-        </h2>
+<h2>پشتیبانی</h2>
 
-        <p>
-            مدارک انجام مأموریت را برای ما ارسال کنید
-        </p>
+<p>مدارک انجام مأموریت را برای ما ارسال کنید</p>
 
-    </div>
+</div>
 
+<div class="card support-card">
 
-    <div class="card support-card">
+<div class="support-icon">?</div>
 
-        <div class="support-icon">
-            ?
-        </div>
+<h3>ارسال درخواست</h3>
 
+<p>
+عکس صفحه یا فیلم از صفحه انجام مأموریت را به
+پشتیبانی بفرستید تا درخواست شما بررسی شود.
+</p>
 
-        <h3>
-            ارسال درخواست
-        </h3>
+<div class="what-send">
 
+<h4>چه چیزی باید بفرستم؟</h4>
 
-        <p>
-            عکس صفحه یا فیلم از صفحه انجام مأموریت
-            را به پشتیبانی بفرستید تا درخواست شما
-            بررسی شود.
-        </p>
+<div class="send-item">
+<span>01</span>
+<span>عکس واضح از صفحه انجام مأموریت</span>
+</div>
 
+<div class="send-item">
+<span>02</span>
+<span>یا فیلم از مراحل انجام مأموریت</span>
+</div>
 
-        <div class="what-send">
+<div class="send-item">
+<span>03</span>
+<span>نام مأموریتی که انجام داده‌اید</span>
+</div>
 
-            <h4>
-                چه چیزی باید بفرستم؟
-            </h4>
+</div>
 
+<button class="black-button" onclick="openSupport()">
+پیام دادن به پشتیبانی
+</button>
 
-            <div class="send-item">
-
-                <span>01</span>
-
-                <span>
-                    عکس واضح از صفحه انجام مأموریت
-                </span>
-
-            </div>
-
-
-            <div class="send-item">
-
-                <span>02</span>
-
-                <span>
-                    یا فیلم از مراحل انجام مأموریت
-                </span>
-
-            </div>
-
-
-            <div class="send-item">
-
-                <span>03</span>
-
-                <span>
-                    نام مأموریتی که انجام داده‌اید
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <button
-            class="black-button"
-            onclick="openSupport()">
-
-            پیام دادن به پشتیبانی
-
-        </button>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =====================================================
-BOTTOM NAV
-===================================================== -->
+<!-- ================= BOTTOM NAV ================= -->
 
 <nav class="bottom-nav">
 
-    <button
-        id="navHome"
-        class="nav-button active"
-        onclick="showPage('homePage')">
+<button id="navHome"
+class="nav-button active"
+onclick="showPage('homePage')">
 
-        <span class="nav-icon">
-            ⌂
-        </span>
+<span class="nav-icon">⌂</span>
+<span class="nav-text">خانه</span>
 
-        <span class="nav-text">
-            خانه
-        </span>
-
-    </button>
+</button>
 
 
-    <button
-        id="navMission"
-        class="nav-button"
-        onclick="showPage('missionPage')">
+<button id="navMission"
+class="nav-button"
+onclick="showPage('missionPage')">
 
-        <span class="nav-icon">
-            ✓
-        </span>
+<span class="nav-icon">✓</span>
+<span class="nav-text">مأموریت</span>
 
-        <span class="nav-text">
-            مأموریت
-        </span>
-
-    </button>
+</button>
 
 
-    <button
-        id="navShop"
-        class="nav-button"
-        onclick="showPage('shopPage')">
+<button id="navShop"
+class="nav-button"
+onclick="showPage('shopPage')">
 
-        <span class="nav-icon">
-            □
-        </span>
+<span class="nav-icon">□</span>
+<span class="nav-text">فروشگاه</span>
 
-        <span class="nav-text">
-            فروشگاه
-        </span>
-
-    </button>
+</button>
 
 
-    <button
-        id="navSupport"
-        class="nav-button"
-        onclick="showPage('supportPage')">
+<button id="navSupport"
+class="nav-button"
+onclick="showPage('supportPage')">
 
-        <span class="nav-icon">
-            ?
-        </span>
+<span class="nav-icon">?</span>
+<span class="nav-text">پشتیبانی</span>
 
-        <span class="nav-text">
-            پشتیبانی
-        </span>
-
-    </button>
+</button>
 
 </nav>
 
@@ -1466,68 +1161,83 @@ BOTTOM NAV
 
 <script>
 
-/* =====================================================
-MISSIONS DATA
-===================================================== */
+/* =========================
+MISSIONS
+========================= */
 
 const missions={
 
-    saraf:{
-        title:"ثبت‌نام در صراف",
-        image:"https://cdn.imgurl.ir/uploads/u61760_Screenshot___Google.jpg",
-        description:"صراف، راهی ساده و مطمئن برای سرمایه‌گذاری در دلار، طلا و ارزهای دیجیتال است. با ثبت‌نام از طریق لینک زیر، ۵۰ هزار تومان هدیه اولیه دریافت کنید.",
-        invite:"کد دعوت:",
-        code:"SH8PY",
-        url:"https://saraf.app/?ref=SH8PY"
-    },
+saraf:{
+title:"ثبت‌نام در صراف",
+image:"https://cdn.imgurl.ir/uploads/u61760_Screenshot___Google.jpg",
 
-    milli:{
-        title:"ثبت‌نام در میلی",
-        image:"https://cdn.imgurl.ir/uploads/w949426_Screenshot___Google.jpg",
-        description:"شما برای سرمایه‌گذاری طلا به میلی دعوت شده‌اید! همین حالا با کد دعوت milli-dwfjg ثبت‌نام کنید و ۱ میلی هدیه بگیرید!",
-        invite:"کد دعوت:",
-        code:"milli-dwfjg",
-        url:"https://milli.gold/app/sign-up?referralCode=milli-dwfjg"
-    },
+description:
+"صراف، راهی ساده و مطمئن برای سرمایه‌گذاری در دلار، طلا و ارزهای دیجیتال است. با ثبت‌نام از طریق لینک زیر، ۵۰ هزار تومان هدیه اولیه دریافت کنید.",
 
-    blue:{
-        title:"ثبت‌نام در بلوجونیور",
-        image:"https://cdn.imgurl.ir/uploads/o09450_Screenshot___Google.jpg",
-        description:"این هدیه بازکردنی است… دوست گرامی، شما از طرف اسکور گیمز عزیز به بلوجونیور دعوت شده‌اید. روی لینک زیر کلیک کرده و اپلیکیشن بلوجونیور را نصب کنید. پس از فرآیند بازکردن حساب در بلوجونیور می‌توانید کد QLWUWI را در قسمت کد معرف وارد کنید. بلو؛ بانک، ولی دوست داشتنی",
-        invite:"کد معرف:",
-        code:"QLWUWI",
-        url:"https://jr.blubank.com"
-    }
+invite:"کد دعوت:",
+
+code:"SH8PY",
+
+url:"https://saraf.app/?ref=SH8PY"
+},
+
+milli:{
+title:"ثبت‌نام در میلی",
+image:"https://cdn.imgurl.ir/uploads/w949426_Screenshot___Google.jpg",
+
+description:
+"شما برای سرمایه‌گذاری طلا به میلی دعوت شده‌اید! همین حالا با کد دعوت milli-dwfjg ثبت‌نام کنید و ۱ میلی هدیه بگیرید!",
+
+invite:"کد دعوت:",
+
+code:"milli-dwfjg",
+
+url:"https://milli.gold/app/sign-up?referralCode=milli-dwfjg"
+},
+
+blue:{
+title:"ثبت‌نام در بلوجونیور",
+image:"https://cdn.imgurl.ir/uploads/o09450_Screenshot___Google.jpg",
+
+description:
+"این هدیه بازکردنی است… دوست گرامی، شما از طرف اسکور گیمز عزیز به بلوجونیور دعوت شده‌اید. روی لینک زیر کلیک کرده و اپلیکیشن بلوجونیور را نصب کنید. پس از فرآیند بازکردن حساب در بلوجونیور می‌توانید کد QLWUWI را در قسمت کد معرف وارد کنید. بلو؛ بانک، ولی دوست داشتنی",
+
+invite:"کد معرف:",
+
+code:"QLWUWI",
+
+url:"https://jr.blubank.com"
+}
 
 };
 
 
-/* =====================================================
-PACKAGES DATA
-===================================================== */
+/* =========================
+PACKAGES
+========================= */
 
 const packages={
 
-    "2mci":{
-        title:"بسته ۲ گیگ همراه اول",
-        mission:"ثبت‌نام در صراف",
-        missionId:"saraf",
-        description:"برای دریافت این بسته باید مأموریت ثبت‌نام در صراف را انجام دهید."
-    },
+"2mci":{
+title:"بسته ۲ گیگ همراه اول",
+mission:"ثبت‌نام در صراف",
+missionId:"saraf",
+description:"برای دریافت این بسته باید مأموریت ثبت‌نام در صراف را انجام دهید."
+},
 
-    "7mci":{
-        title:"بسته ۷ گیگ همراه اول",
-        mission:"ثبت‌نام در میلی",
-        missionId:"milli",
-        description:"برای دریافت این بسته باید مأموریت ثبت‌نام در میلی را انجام دهید."
-    },
+"7mci":{
+title:"بسته ۷ گیگ همراه اول",
+mission:"ثبت‌نام در میلی",
+missionId:"milli",
+description:"برای دریافت این بسته باید مأموریت ثبت‌نام در میلی را انجام دهید."
+},
 
-    "7ir":{
-        title:"بسته ۷ گیگ ایرانسل",
-        mission:"ثبت‌نام در بلوجونیور",
-        missionId:"blue",
-        description:"برای دریافت این بسته باید مأموریت ثبت‌نام در بلوجونیور را انجام دهید."
-    }
+"7ir":{
+title:"بسته ۷ گیگ ایرانسل",
+mission:"ثبت‌نام در بلوجونیور",
+missionId:"blue",
+description:"برای دریافت این بسته باید مأموریت ثبت‌نام در بلوجونیور را انجام دهید."
+}
 
 };
 
@@ -1536,314 +1246,249 @@ let currentMission=null;
 let currentPackage=null;
 
 
-/* =====================================================
-PAGE
-===================================================== */
+/* =========================
+PAGE NAVIGATION
+========================= */
 
 function showPage(pageId){
 
-    document
-    .querySelectorAll(".page")
-    .forEach(function(page){
+document.querySelectorAll(".page").forEach(function(page){
 
-        page.classList.remove("active");
+page.classList.remove("active");
 
-    });
+});
 
 
-    const page=document.getElementById(pageId);
+const page=document.getElementById(pageId);
 
-    if(!page){
-        return;
-    }
+if(!page)return;
 
-
-    page.classList.add("active");
+page.classList.add("active");
 
 
-    document
-    .querySelectorAll(".nav-button")
-    .forEach(function(button){
+document.querySelectorAll(".nav-button").forEach(function(button){
 
-        button.classList.remove("active");
+button.classList.remove("active");
 
-    });
+});
 
 
-    if(pageId==="homePage"){
+if(pageId==="homePage"){
 
-        document
-        .getElementById("navHome")
-        .classList.add("active");
+document.getElementById("navHome").classList.add("active");
 
-    }
+}
 
-    else if(
-        pageId==="missionPage" ||
-        pageId==="missionDetailPage"
-    ){
+else if(
+pageId==="missionPage" ||
+pageId==="missionDetailPage"
+){
 
-        document
-        .getElementById("navMission")
-        .classList.add("active");
+document.getElementById("navMission").classList.add("active");
 
-    }
+}
 
-    else if(
-        pageId==="shopPage" ||
-        pageId==="packageDetailPage"
-    ){
+else if(
+pageId==="shopPage" ||
+pageId==="packageDetailPage"
+){
 
-        document
-        .getElementById("navShop")
-        .classList.add("active");
+document.getElementById("navShop").classList.add("active");
 
-    }
+}
 
-    else if(pageId==="supportPage"){
+else if(pageId==="supportPage"){
 
-        document
-        .getElementById("navSupport")
-        .classList.add("active");
+document.getElementById("navSupport").classList.add("active");
 
-    }
+}
 
-
-    window.scrollTo(0,0);
+window.scrollTo(0,0);
 
 }
 
 
-/* =====================================================
+/* =========================
 OPEN MISSION
-===================================================== */
+========================= */
 
 function openMission(id){
 
-    const mission=missions[id];
+const mission=missions[id];
 
-    if(!mission){
-        return;
-    }
+if(!mission)return;
 
+currentMission=id;
 
-    currentMission=id;
+document.getElementById("detailImage").src=mission.image;
 
+document.getElementById("detailTitle").textContent=mission.title;
 
-    document
-    .getElementById("detailImage")
-    .src=mission.image;
+document.getElementById("detailDescription").textContent=mission.description;
 
+document.getElementById("inviteText").textContent=mission.invite;
 
-    document
-    .getElementById("detailTitle")
-    .textContent=mission.title;
+document.getElementById("inviteCode").textContent=mission.code;
 
-
-    document
-    .getElementById("detailDescription")
-    .textContent=mission.description;
-
-
-    document
-    .getElementById("inviteText")
-    .textContent=mission.invite;
-
-
-    document
-    .getElementById("inviteCode")
-    .textContent=mission.code;
-
-
-    showPage("missionDetailPage");
+showPage("missionDetailPage");
 
 }
 
 
-/* =====================================================
+/* =========================
 DO MISSION
-===================================================== */
+========================= */
 
 function doMission(){
 
-    if(!currentMission){
-        return;
-    }
+if(!currentMission)return;
 
+const mission=missions[currentMission];
 
-    const mission=missions[currentMission];
-
-
-    window.open(
-        mission.url,
-        "_blank"
-    );
+window.open(mission.url,"_blank");
 
 }
 
 
-/* =====================================================
+/* =========================
 MISSION COMPLETED
-===================================================== */
+========================= */
 
 function missionCompleted(){
 
-    if(currentMission){
+if(currentMission){
 
-        localStorage.setItem(
-            "completed_"+currentMission,
-            "true"
-        );
+localStorage.setItem(
+"completed_"+currentMission,
+"true"
+);
 
-    }
+}
 
-
-    showPage("supportPage");
+showPage("supportPage");
 
 }
 
 
-/* =====================================================
-PACKAGE
-===================================================== */
+/* =========================
+OPEN PACKAGE
+========================= */
 
 function openPackage(id){
 
-    const pack=packages[id];
+const pack=packages[id];
 
-    if(!pack){
-        return;
-    }
+if(!pack)return;
 
+currentPackage=id;
 
-    currentPackage=id;
+document.getElementById("packageTitle").textContent=pack.title;
 
+document.getElementById("packageMission").textContent=pack.mission;
 
-    document
-    .getElementById("packageTitle")
-    .textContent=pack.title;
+document.getElementById("packageDescription").textContent=pack.description;
 
-
-    document
-    .getElementById("packageMission")
-    .textContent=pack.mission;
-
-
-    document
-    .getElementById("packageDescription")
-    .textContent=pack.description;
-
-
-    showPage("packageDetailPage");
+showPage("packageDetailPage");
 
 }
 
 
-/* =====================================================
+/* =========================
 PACKAGE -> MISSION
-===================================================== */
+========================= */
 
 function goPackageMission(){
 
-    if(!currentPackage){
-        return;
-    }
+if(!currentPackage)return;
 
+const pack=packages[currentPackage];
 
-    const pack=packages[currentPackage];
-
-    openMission(pack.missionId);
+openMission(pack.missionId);
 
 }
 
 
-/* =====================================================
+/* =========================
 SUPPORT
-===================================================== */
+========================= */
 
 function openSupport(){
 
-    /*
-      گوفیتینو بعد از بارگذاری معمولاً Goftino.open()
-      را در اختیار صفحه قرار می‌دهد.
-    */
+/*
+اگر Goftino قبلاً لود شده باشد،
+مستقیماً پنجره پشتیبانی باز می‌شود.
+*/
 
-    if(
-        typeof Goftino!=="undefined" &&
-        typeof Goftino.open==="function"
-    ){
+if(
+typeof Goftino !== "undefined" &&
+typeof Goftino.open === "function"
+){
 
-        Goftino.open();
+Goftino.open();
 
-        return;
+return;
 
-    }
-
-
-    /*
-      اگر هنوز اسکریپت گوفیتینو لود نشده باشد،
-      کمی صبر می‌کنیم و دوباره امتحان می‌کنیم.
-    */
-
-    let tries=0;
-
-    const timer=setInterval(function(){
-
-        tries++;
-
-        if(
-            typeof Goftino!=="undefined" &&
-            typeof Goftino.open==="function"
-        ){
-
-            clearInterval(timer);
-
-            Goftino.open();
-
-        }
+}
 
 
-        if(tries>=20){
+/*
+اگر هنوز لود نشده باشد،
+چند بار تلاش می‌کنیم.
+*/
 
-            clearInterval(timer);
+let attempts=0;
 
-            alert(
-                "پشتیبانی هنوز بارگذاری نشده است. لطفاً چند ثانیه بعد دوباره امتحان کنید."
-            );
+const timer=setInterval(function(){
 
-        }
+attempts++;
 
-    },300);
+if(
+typeof Goftino !== "undefined" &&
+typeof Goftino.open === "function"
+){
+
+clearInterval(timer);
+
+Goftino.open();
+
+}
+
+if(attempts>=20){
+
+clearInterval(timer);
+
+alert(
+"پشتیبانی در حال بارگذاری است. لطفاً چند ثانیه بعد دوباره امتحان کنید."
+);
+
+}
+
+},300);
 
 }
 
 </script>
 
 
-<!-- =====================================================
+<!-- =========================
 GOFTINO
-===================================================== -->
+========================= -->
 
 <script type="text/javascript">
 
 !function(){
 
-    var i="jb8b5f",
-    d=document,
-    g=d.createElement("script"),
-    s="https://www.goftino.com/widget/"+i,
-    l=localStorage.getItem("goftino_"+i);
+var i="jb8b5f",
+d=document,
+g=d.createElement("script"),
+s="https://www.goftino.com/widget/"+i,
+l=localStorage.getItem("goftino_"+i);
 
-    g.type="text/javascript";
+g.type="text/javascript";
+g.async=true;
+g.src=l?s+"?o="+l:s;
 
-    g.async=true;
-
-    g.src=l
-        ? s+"?o="+l
-        : s;
-
-    d.getElementsByTagName("head")[0]
-    .appendChild(g);
+d.getElementsByTagName("head")[0].appendChild(g);
 
 }();
 
